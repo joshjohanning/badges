@@ -52,7 +52,8 @@ jobs:
           "schemaVersion": 1,
           "label": "./gh-cli scripts",
           "message": "$SCRIPT_COUNT",
-          "color": "deepskyblue",
+          "labelColor": "gray",
+          "color": "blue",
           "namedLogo": "github"
         }
         EOF
@@ -63,8 +64,9 @@ jobs:
           "schemaVersion": 1,
           "label": "./scripts scripts",
           "message": "$SCRIPTS_COUNT",
+          "labelColor": "gray",
           "color": "blue",
-          "namedLogo": "terminal"
+          "namedLogo": "github"
         }
         EOF
         
