@@ -50,7 +50,7 @@ jobs:
         cat > github-misc-scripts-gh-cli-count.json << EOF
         {
           "schemaVersion": 1,
-          "label": "./gh-cli script count",
+          "label": "./gh-cli scripts",
           "message": "$SCRIPT_COUNT",
           "color": "deepskyblue",
           "namedLogo": "github"
@@ -61,7 +61,7 @@ jobs:
         cat > github-misc-scripts-scripts-count.json << EOF
         {
           "schemaVersion": 1,
-          "label": "./scripts script count",
+          "label": "./scripts scripts",
           "message": "$SCRIPTS_COUNT",
           "color": "blue",
           "namedLogo": "terminal"
