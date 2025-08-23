@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "label": "./gh-cli scripts",
   "message": "178",
-  "color": "deepskyblue",
+  "labelColor": "gray",
+  "color": "blue",
   "namedLogo": "github"
 }

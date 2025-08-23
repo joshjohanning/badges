@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "label": "./scripts scripts",
   "message": "21",
+  "labelColor": "gray",
   "color": "blue",
-  "namedLogo": "terminal"
+  "namedLogo": "github"
 }
