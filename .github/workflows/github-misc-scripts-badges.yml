@@ -33,8 +33,8 @@ jobs:
     - name: Count scripts in scripts folder  
       id: scripts-count
       run: |
-        # Count non-system files in scripts directory (exclude README.md, .gitignore, etc.)
-        scripts_count=$(find github-misc-scripts/scripts -type f ! -name "README.md" ! -name ".gitignore" ! -name "*.md" ! -name ".DS_Store" ! -name "Thumbs.db" | wc -l)
+        # Count script files in scripts directory (include .sh, .ps1, .js, .py, .mjs, .ts)
+        scripts_count=$(find github-misc-scripts/scripts -type f \( -name "*.sh" -o -name "*.ps1" -o -name "*.js" -o -name "*.py" -o -name "*.mjs" -o -name "*.ts" \) | wc -l)
         echo "Scripts folder count: $scripts_count"
         echo "count=$scripts_count" >> $GITHUB_OUTPUT
 
