@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "label": "scripts folder",
-  "message": "0",
+  "label": "./scripts scripts",
+  "message": "21",
   "color": "blue",
   "namedLogo": "terminal"
 }
