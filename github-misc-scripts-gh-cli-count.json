@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "label": "gh-cli scripts",
+  "label": "gh-cli script count",
   "message": "178",
-  "color": "brightgreen",
-  "namedLogo": "github"
+  "color": "deepskyblue",
+  "namedLogo": "zsh"
 }
