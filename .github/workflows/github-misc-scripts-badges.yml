@@ -47,7 +47,7 @@ jobs:
         echo "Updating scripts badge with script count: $SCRIPTS_COUNT"
         
         # Create the JSON file for the gh-cli dynamic badge
-        cat > github-misc-scripts-gh-cli-count.json << EOF
+        cat > github-misc-scripts/gh-cli-count.json << EOF
         {
           "schemaVersion": 1,
           "label": "./gh-cli scripts",
@@ -59,7 +59,7 @@ jobs:
         EOF
 
         # Create the JSON file for the scripts dynamic badge
-        cat > github-misc-scripts-scripts-count.json << EOF
+        cat > github-misc-scripts/scripts-count.json << EOF
         {
           "schemaVersion": 1,
           "label": "./scripts scripts",
@@ -73,7 +73,7 @@ jobs:
         # Commit and push if changed
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add github-misc-scripts-gh-cli-count.json github-misc-scripts-scripts-count.json
+        git add github-misc-scripts/gh-cli-count.json github-misc-scripts/scripts-count.json
         if git diff --staged --quiet; then
           echo "No changes to badge data - gh-cli count is still $SCRIPT_COUNT, scripts count is still $SCRIPTS_COUNT"
         else
