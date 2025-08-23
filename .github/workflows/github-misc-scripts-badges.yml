@@ -1,0 +1,81 @@
+name: Update github-misc-scripts badges
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run every 12 hours at midnight and noon UTC
+    - cron: '0 0,12 * * *'
+
+jobs:
+  update-github-misc-scripts-badges:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout badges repository
+      uses: actions/checkout@v5
+
+    - name: Checkout github-misc-scripts repository
+      uses: actions/checkout@v5
+      with:
+        repository: joshjohanning/github-misc-scripts
+        path: github-misc-scripts
+
+    - name: Count scripts in gh-cli folder
+      id: count
+      run: |
+        # Count .sh files in gh-cli directory
+        script_count=$(find github-misc-scripts/gh-cli -name "*.sh" -type f | wc -l)
+        echo "Script count: $script_count"
+        echo "count=$script_count" >> $GITHUB_OUTPUT
+
+    - name: Count scripts in scripts folder  
+      id: scripts-count
+      run: |
+        # Count non-system files in scripts directory (exclude README.md, .gitignore, etc.)
+        scripts_count=$(find github-misc-scripts/scripts -type f ! -name "README.md" ! -name ".gitignore" ! -name "*.md" ! -name ".DS_Store" ! -name "Thumbs.db" | wc -l)
+        echo "Scripts folder count: $scripts_count"
+        echo "count=$scripts_count" >> $GITHUB_OUTPUT
+
+    - name: Update badge data
+      run: |
+        # Use the actual counts from the previous steps
+        SCRIPT_COUNT="${{ steps.count.outputs.count }}"
+        SCRIPTS_COUNT="${{ steps.scripts-count.outputs.count }}"
+        echo "Updating gh-cli badge with script count: $SCRIPT_COUNT"
+        echo "Updating scripts badge with script count: $SCRIPTS_COUNT"
+        
+        # Create the JSON file for the gh-cli dynamic badge
+        cat > github-misc-scripts-gh-cli-count.json << EOF
+        {
+          "schemaVersion": 1,
+          "label": "./gh-cli script count",
+          "message": "$SCRIPT_COUNT",
+          "color": "deepskyblue",
+          "namedLogo": "github"
+        }
+        EOF
+
+        # Create the JSON file for the scripts dynamic badge
+        cat > github-misc-scripts-scripts-count.json << EOF
+        {
+          "schemaVersion": 1,
+          "label": "./scripts script count",
+          "message": "$SCRIPTS_COUNT",
+          "color": "blue",
+          "namedLogo": "terminal"
+        }
+        EOF
+        
+        # Commit and push if changed
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add github-misc-scripts-gh-cli-count.json github-misc-scripts-scripts-count.json
+        if git diff --staged --quiet; then
+          echo "No changes to badge data - gh-cli count is still $SCRIPT_COUNT, scripts count is still $SCRIPTS_COUNT"
+        else
+          echo "Changes to commit and push"
+          git commit -m "ci: update github-misc-scripts badges"
+          git push
+        fi
