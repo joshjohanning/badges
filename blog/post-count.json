@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "blog posts",
   "message": "77",
-  "labelColor": "gray",
+  "labelColor": "333",
   "color": "blue",
   "namedLogo": "jekyll"
 }

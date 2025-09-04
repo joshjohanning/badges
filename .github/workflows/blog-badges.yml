@@ -64,7 +64,7 @@ jobs:
           "schemaVersion": 1,
           "label": "blog posts",
           "message": "$POSTS_COUNT",
-          "labelColor": "gray",
+          "labelColor": "333",
           "color": "blue",
           "namedLogo": "jekyll"
         }
@@ -76,7 +76,7 @@ jobs:
           "schemaVersion": 1,
           "label": "recent post",
           "message": "$RECENT_DATE",
-          "labelColor": "gray",
+          "labelColor": "333",
           "color": "blue",
           "namedLogo": "googlecalendar"
         }

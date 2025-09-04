@@ -57,7 +57,7 @@ jobs:
           "schemaVersion": 1,
           "label": "./gh-cli scripts",
           "message": "$SCRIPT_COUNT",
-          "labelColor": "gray",
+          "labelColor": "333",
           "color": "blue",
           "namedLogo": "github"
         }
@@ -69,7 +69,7 @@ jobs:
           "schemaVersion": 1,
           "label": "./scripts scripts",
           "message": "$SCRIPTS_COUNT",
-          "labelColor": "gray",
+          "labelColor": "333",
           "color": "blue",
           "namedLogo": "github"
         }
