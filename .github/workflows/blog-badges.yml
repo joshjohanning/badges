@@ -77,7 +77,7 @@ jobs:
           "label": "recent post",
           "message": "$RECENT_DATE",
           "labelColor": "gray",
-          "color": "purple",
+          "color": "blue",
           "namedLogo": "googlecalendar"
         }
         EOF
