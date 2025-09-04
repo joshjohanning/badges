@@ -3,6 +3,8 @@ name: Update github-misc-scripts badges
 on:
   workflow_dispatch:
   schedule:
+    # Run once daily at 6 PM UTC
+    - cron: '0 18 * * *'
     # Run once daily at midnight UTC
     - cron: '0 0 * * *'
 
