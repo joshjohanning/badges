@@ -59,7 +59,7 @@ jobs:
         
         # Create the JSON file for the blog posts dynamic badge
         mkdir -p blog
-        cat > blog/blog-posts-count.json << EOF
+        cat > blog/post-count.json << EOF
         {
           "schemaVersion": 1,
           "label": "blog posts",
@@ -85,7 +85,7 @@ jobs:
         # Commit and push if changed
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add blog/blog-posts-count.json blog/recent-post-date.json
+        git add blog/post-count.json blog/recent-post-date.json
         if git diff --staged --quiet; then
           echo "No changes to badge data - blog posts count is still $POSTS_COUNT, recent post date is still $RECENT_DATE"
         else
