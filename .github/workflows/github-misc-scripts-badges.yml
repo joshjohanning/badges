@@ -59,8 +59,7 @@ jobs:
           "message": "$SCRIPT_COUNT",
           "labelColor": "333",
           "color": "blue",
-          "namedLogo": "github",
-          "style": "plastic"
+          "namedLogo": "github"
         }
         EOF
 
@@ -72,8 +71,7 @@ jobs:
           "message": "$SCRIPTS_COUNT",
           "labelColor": "333",
           "color": "blue",
-          "namedLogo": "github",
-          "style": "plastic"
+          "namedLogo": "github"
         }
         EOF
         
