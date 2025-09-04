@@ -5,8 +5,10 @@ on:
   schedule:
     # Run once daily at 6 PM UTC
     - cron: '0 18 * * *'
-    # Run once daily at midnight UTC
-    - cron: '0 0 * * *'
+
+concurrency:
+  group: badges-repo-updates
+  cancel-in-progress: false
 
 jobs:
   update-github-misc-scripts-badges:

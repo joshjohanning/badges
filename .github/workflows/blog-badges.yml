@@ -6,6 +6,10 @@ on:
     # Run once daily at midnight UTC
     - cron: '0 0 * * *'
 
+concurrency:
+  group: badges-repo-updates
+  cancel-in-progress: false
+
 jobs:
   update-blog-badges:
     runs-on: ubuntu-latest
