@@ -71,7 +71,7 @@ jobs:
         EOF
 
         # Create the JSON file for the recent post date badge
-        cat > blog/recent-post-date.json << EOF
+        cat > blog/most-recent-post-date.json << EOF
         {
           "schemaVersion": 1,
           "label": "recent post",
@@ -85,7 +85,7 @@ jobs:
         # Commit and push if changed
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add blog/post-count.json blog/recent-post-date.json
+        git add blog/post-count.json blog/most-recent-post-date.json
         if git diff --staged --quiet; then
           echo "No changes to badge data - blog posts count is still $POSTS_COUNT, recent post date is still $RECENT_DATE"
         else
