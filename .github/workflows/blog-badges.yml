@@ -66,7 +66,8 @@ jobs:
           "message": "$POSTS_COUNT",
           "labelColor": "333",
           "color": "blue",
-          "namedLogo": "jekyll"
+          "namedLogo": "jekyll",
+          "style": "plastic"
         }
         EOF
 
@@ -78,7 +79,8 @@ jobs:
           "message": "$RECENT_DATE",
           "labelColor": "333",
           "color": "blue",
-          "namedLogo": "googlecalendar"
+          "namedLogo": "googlecalendar",
+          "style": "plastic"
         }
         EOF
         
