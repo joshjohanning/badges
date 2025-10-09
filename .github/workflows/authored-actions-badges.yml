@@ -71,8 +71,7 @@ jobs:
           "message": "$ACTIONS_COUNT",
           "labelColor": "333",
           "color": "blue",
-          "namedLogo": "github",
-          "style": "plastic"
+          "namedLogo": "github"
         }
         EOF
         
