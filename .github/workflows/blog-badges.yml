@@ -74,7 +74,7 @@ jobs:
         cat > blog/most-recent-post-date.json << EOF
         {
           "schemaVersion": 1,
-          "label": "recent post",
+          "label": "most recent post",
           "message": "$RECENT_DATE",
           "labelColor": "333",
           "color": "blue",
